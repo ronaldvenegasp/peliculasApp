@@ -1,7 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
+// Rutas
 import { AppRoutingModule } from './app-routing.module';
+
+// Servicios
+import { PeliculasService } from './services/peliculas.service';
+
+// Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -26,9 +34,16 @@ import { PeliculaTarjetaComponent } from './components/pelicula-tarjeta/pelicula
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    PeliculasService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
