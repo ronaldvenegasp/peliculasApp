@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pelicula-tarjeta',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class PeliculaTarjetaComponent implements OnInit {
+  @Input() pelicula: any = {};
+  @Input() idPelicula: any;
 
-  constructor() { }
+  @Output() peliculaSeleccionada: EventEmitter<any>;
+
+  constructor(private router: Router) {
+    this.peliculaSeleccionada = new EventEmitter();
+  }
 
   ngOnInit() {
+  }
+
+  verPelicula() {
+    this.router.navigate(['pelicula', this.idPelicula]);
   }
 
 }

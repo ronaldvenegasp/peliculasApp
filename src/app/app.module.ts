@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 // Servicios
 import { PeliculasService } from './services/peliculas.service';
 
+// Pipes
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+
 // Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -17,8 +20,8 @@ import { SearchComponent } from './components/shared/search/search.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
-import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PeliculaTarjetaComponent } from './components/pelicula-tarjeta/pelicula-tarjeta.component';
+import { GaleriaComponent } from './components/home/galeria.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,9 @@ import { PeliculaTarjetaComponent } from './components/pelicula-tarjeta/pelicula
     FooterComponent,
     HeaderComponent,
     PeliculaComponent,
-    PeliculasComponent,
-    PeliculaTarjetaComponent
+    PeliculaTarjetaComponent,
+    PeliculaImagenPipe,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
