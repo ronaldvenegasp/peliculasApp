@@ -20,7 +20,6 @@ import { SearchComponent } from './components/shared/search/search.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
-import { PeliculaTarjetaComponent } from './components/pelicula-tarjeta/pelicula-tarjeta.component';
 import { GaleriaComponent } from './components/home/galeria.component';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { GaleriaComponent } from './components/home/galeria.component';
     FooterComponent,
     HeaderComponent,
     PeliculaComponent,
-    PeliculaTarjetaComponent,
     PeliculaImagenPipe,
     GaleriaComponent
   ],

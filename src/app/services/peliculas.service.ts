@@ -16,10 +16,15 @@ export class PeliculasService {
 
   getCartelera() {
     let desde = new Date();
-    let desdeStr = `${desde.getFullYear()}-${desde.getMonth() + 1}-${desde.getDate()}`;
+    let anoDesde = desde.getFullYear();
+    let mesDesde = desde.getMonth() + 1;
+    let diaDesde = desde.getDate();
+    let desdeStr = `${anoDesde}-${mesDesde}-${diaDesde}`;
     let hasta = new Date();
-    hasta.setDate(hasta.getDate() + 7);
-    let hastaStr = `${hasta.getFullYear()}-${hasta.getMonth() + 1 }-${hasta.getDate()}`;
+    let anoHasta = hasta.getFullYear();
+    let mesHasta = hasta.getMonth() + 1;
+    let diaHasta = hasta.getDate() + 7;
+    let hastaStr = `${anoHasta}-${mesHasta}-${diaHasta}`;
 
     const url = `${this.urlMoviedb}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apiKey}&language=es`;
     return this.http.jsonp(url, 'callback');
@@ -42,5 +47,10 @@ export class PeliculasService {
       this.peliculas = data['results'];
       return data['results'];
     }));
+  }
+
+  getPelicula(id: string) {
+    const url = `${this.urlMoviedb}/movie/${id}?api_key=${this.apiKey}&language=es`;
+    return this.http.jsonp(url, 'callback');
   }
 }

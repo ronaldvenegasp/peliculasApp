@@ -9,7 +9,8 @@ export class GaleriaComponent implements OnInit {
   @Input('peliculas') peliculas: any;
   @Input('titulo') titulo: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

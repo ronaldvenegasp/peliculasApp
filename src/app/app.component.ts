@@ -9,7 +9,7 @@ import { PeliculasService } from './services/peliculas.service';
 export class AppComponent {
   constructor(public peliculasService: PeliculasService) {
     this.peliculasService.getPopulares().subscribe(data => {
-      console.log('Películas populares', data);
+      // console.log('Películas populares', data);
     });
 
   }
